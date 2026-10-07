@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --bg: #070a0f;
+    --card: #0f141c;
+    --card2: #151b24;
+    --borda: #232c39;
+
+    --branco: #f4f7fa;
+    --cinza: #8491a3;
+    
+    --verde: #32d583;
+    --verde2: #163f2e;
+    --azul: #3882f6;
+    --laranja: #f59e0b;
+    --vermelho: #ef4444;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--branco);
+}
+
+h1 {
+    text-align: center;
+}
+
+.descricao {
+    text-align: center;
+    color: var(--verde);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.caixa-conta {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px var(--borda);
+    height: 400px;
+    width: 500px;
+    margin-top: 10px;
+}
+
+.info-saldo {
+    font-size: small;
+    color: var(--cinza);
+}
+
+.saldo {
+    font-size: xx-large;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.info-op {
+    font-size: small;
+    color: var(--cinza);
+    margin-top: 50px
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+#buttons {
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: var(--card2);
+    color: var(--branco);
+    font-weight: 300;
+}
+
+.saque {
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: var(--azul);
+    color: var(--branco);
+    font-weight: 300;
+}
+
+.deposito {
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: var(--verde2);
+    color: var(--branco);
+    font-weight: 300;
+}
+
+.saque:hover {
+    opacity: 0.7;
+}
+
+.saque:active {
+    transform: scale(0.95);
+}
+
+.deposito:hover {
+    opacity: 0.7;
+}
+
+.deposito:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.info-movi {
+    font-size: small;
+    color: var(--cinza);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.info {
+    color: var(--cinza);
+    font-size: x-small;
+}
+
+.info-saque {
+    margin-top: 15px;
+    color: var(--cinza);
+    font-size: small;
+}
