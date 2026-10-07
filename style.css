@@ -187,9 +187,20 @@ button:active {
 
 .teclado {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     margin-top: 10px;
 }
 
+#btn-num {
+    width: 40px;
+    height: 40px;
+   
+}
+
+.btn-zero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
