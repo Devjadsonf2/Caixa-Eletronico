@@ -119,6 +119,7 @@ h1 {
 
 button:hover {
     opacity: 0.7;
+    transition: .3s;
 }
 
 button:active {
@@ -142,3 +143,53 @@ button:active {
     color: var(--cinza);
     font-size: small;
 }
+
+.teclas {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px var(--borda);
+    height: 400px;
+    width: 400px;
+    margin-top: 10px;
+}
+
+.sacar {
+    text-align: center;
+    color: var(--cinza);
+    font-size: small;
+}
+
+.valor-saque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.saque-rapido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+#btn-valor {
+    height: 30px;
+    width: 90px;
+    background: var(--cinza);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+}
+
+.teclado {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    margin-top: 10px;
+}
+
