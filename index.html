@@ -1,72 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Caixa Eletrônico</title>
 </head>
+
 <body>
-    <h1>Caixa Eletrônico</h1>
-    <p class="descricao">JAVASCRIPT - SIMULAÇÃO DIDÁTICA</p>
+    <main class="caixa">
 
-    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <h1>CAIXA ELETRÔNICO</h1>
+            <p>JavaScript - SIMULAÇÃO DIDÁTICA</p>
+        </header>
 
-    <div class="caixa-conta">
-        <p class="info-saldo">SALDO DISPONIVEL</p>
-        <span class="saldo">R$ 1.500,00</span>
+        <!-- Conteúdo principal -->
+        <section class="conteudo">
 
-        <div class="operacoes">
-            <p class="info-op">OPERACOES</p>
-            <div class="botoes">
-                <button id="buttons">CONSULTAR SALDO</button>
-                <button class="saque">SACAR</button>
-                <button class="deposito">DEPOSITAR</button>
-                <button id="buttons">LIMPAR OPERACAO</button>
+            <!-- PAINEL ESQUERDO -->
+            <div class="painel saldo">
+
+                <span class="label">SALDO DISPONÍVEL</span>
+                <H2>R$ 1.500,00</H2>
+                <small>
+                    Jadson Ferreira &nbsp; | &nbsp;
+                    Conta demo 001 &nbsp; | &nbsp;
+                    2026
+                </small>
+
+                <div class="operacoes">
+
+                    <span class="label">OPERAÇÔES</span>
+                    <div class="botoes-operacoes">
+                        <button class="btn consultar">CONSULTAR SALDO</button>
+                        <button class="btn sacar">SACAR</button>
+                        <button class="btn depositar">DEPOSITAR</button>
+                        <button class="btn limpar">LIMPAR OPERAÇÂO</button>
+                    </div>
+                </div>
+
+                <!-- Histórico -->
+                <div class="historico">
+                    <span class="label">ÚLTIMAS MOVIMENTAÇÕES</span>
+                    <p>Conta iniciada <span>+ R$ 1.500,00</span></p>
+                </div>
+
             </div>
 
-            <p class="info-movi">ULTIMAS MOVIMENTACOES</p>
-            <span class="info">Conta Iniciada + R$ 1.500,00</span>
-            <p class="info-saque">Digite o valor para sacar.</p>
-        </div>
-    </div>
+            <!-- PAINEL DIREITO -->
+            <div class="painel saque">
 
-    <div class="teclas">
-        <p class="sacar">SACAR</p>
-        <span class="valor-saque">R$ 0,00</span>
+                <div class="titulo-saque">
+                    <span class="label">SACAR</span>
+                    <strong>R$ 0,05</strong>
+                </div>
 
-        <div class="saque-rapido">
-            <button id="btn-valor">R$ 50</button>
-            <button id="btn-valor">R$ 100</button>
-            <button id="btn-valor">R$ 200</button>
-        </div>
+            <!-- Valores rápidos -->
+             <div class="valores">
 
-        <div class="teclado">
-            <button id="btn-num">1</button>
-            <button id="btn-num">2</button>
-            <button id="btn-num">3</button>
+                <button>R$ 50</button>
+                <button>R$ 100</button>
+                <button>R$ 200</button>
 
-            <button id="btn-num">4</button>
-            <button id="btn-num">5</button>
-            <button id="btn-num">6</button>
+             </div>
+             
+             <!-- Teclado -->
+              <div class="teclado">
 
-            <button id="btn-num">7</button>
-            <button id="btn-num">8</button>
-            <button id="btn-num">9</button>
-            
-        </div>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
 
-        <div class="btn-zero">
-            <button id="btn-num">0</button>
-        </div>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
 
-        <div class="btn-operacao">
-            <button>CANCELAR</button>
-            <button>LIMPAR</button>
-            <button>CONFIRMAR</button>
-        </div>
-        <p>Sistema demonstrativo - Nenhum dado bancário real</p>
-    </div>
-    </div>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+
+                <div></div>
+
+                <button>0</button>
+
+                <div></div>
+
+              </div>
+
+             <!-- Botões inferiores -->
+              <div class="acoes">
+
+                <button class="cancelar">CANCELAR</button>
+                <button class="limpar-teclado">LIMPAR</button>
+                <button class="confirmar">CONFIRMAR</button>
+
+              </div>
+
+              <footer>
+                Sistema demonstrativo • nenhum dado bancário real
+              </footer>
+
+            </div>
+
+        </section>
+
+    </main>
+    
 </body>
+
 </html>
