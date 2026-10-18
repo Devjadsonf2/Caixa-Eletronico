@@ -164,13 +164,14 @@ button:active {
     margin-top: 30px;
 }
 
-.historico p {
+.historico li {
     font-size: 10px;
     color: var(--cinza);
     margin-top: 10px;
+    list-style-type: none;
 }
 
-.historico p span {
+.historico li span {
     color: var(--verde);
     margin-left: 15px;
 }

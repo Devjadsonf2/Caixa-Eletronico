@@ -24,7 +24,7 @@
             <div class="painel saldo">
 
                 <span class="label">SALDO DISPONÍVEL</span>
-                <H2>R$ 1.500,00</H2>
+                <h2 id="saldo">R$ 1.500,00</h2>
                 <small>
                     Jadson Ferreira &nbsp; | &nbsp;
                     Conta demo 001 &nbsp; | &nbsp;
@@ -35,18 +35,24 @@
 
                     <span class="label">OPERAÇÔES</span>
                     <div class="botoes-operacoes">
-                        <button class="btn consultar">CONSULTAR SALDO</button>
-                        <button class="btn sacar">SACAR</button>
-                        <button class="btn depositar">DEPOSITAR</button>
-                        <button class="btn limpar">LIMPAR OPERAÇÂO</button>
+                        <button class="btn consultar" id="btnConsultar">CONSULTAR SALDO</button>
+                        <button class="btn sacar" id="btnSacar">SACAR</button>
+                        <button class="btn depositar" id="btnDepositar">DEPOSITAR</button>
+                        <button class="btn limpar" id="btnLimpar">LIMPAR OPERAÇÂO</button>
                     </div>
                 </div>
 
                 <!-- Histórico -->
                 <div class="historico">
                     <span class="label">ÚLTIMAS MOVIMENTAÇÕES</span>
-                    <p>Conta iniciada <span>+ R$ 1.500,00</span></p>
-                    <p class="mensagem">Digite o valor para sacar.</p>
+
+                    <ul id="listaHistorico">
+                        <li>Conta iniciada: <span>+ R$ 1.500,00</span></li>
+                    </ul>
+
+                    <p id="mensagem" class="mensagem">
+                        Selecione uma operação.
+                    </p>
 
                 </div>
 
@@ -57,53 +63,53 @@
 
                 <div class="titulo-saque">
                     <span class="label">SACAR</span>
-                    <strong>R$ 0,05</strong>
+                    <strong id="valorDigitado"></strong>
                 </div>
 
-            <!-- Valores rápidos -->
-             <div class="valores">
+                <!-- Valores rápidos -->
+                <div class="valores">
 
-                <button>R$ 50</button>
-                <button>R$ 100</button>
-                <button>R$ 200</button>
+                    <button data-valor="50">R$ 50</button>
+                    <button data-valor="100">R$ 100</button>
+                    <button data-valor="200">R$ 200</button>
 
-             </div>
-             
-             <!-- Teclado -->
-              <div class="teclado">
+                </div>
 
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
+                <!-- Teclado -->
+                <div class="teclado">
 
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
+                    <button data-numero="1">1</button>
+                    <button data-numero="2">2</button>
+                    <button data-numero="3">3</button>
 
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
+                    <button data-numero="4">4</button>
+                    <button data-numero="5">5</button>
+                    <button data-numero="6">6</button>
 
-                <div></div>
+                    <button data-numero="7">7</button>
+                    <button data-numero="8">8</button>
+                    <button data-numero="9">9</button>
 
-                <button>0</button>
+                    <div></div>
 
-                <div></div>
+                    <button data-numero="0">0</button>
 
-              </div>
+                    <div></div>
 
-             <!-- Botões inferiores -->
-              <div class="acoes">
+                </div>
 
-                <button class="cancelar">CANCELAR</button>
-                <button class="limpar-teclado">LIMPAR</button>
-                <button class="confirmar">CONFIRMAR</button>
+                <!-- Botões inferiores -->
+                <div class="acoes">
 
-              </div>
+                    <button class="cancelar" id="btnCancelar">CANCELAR</button>
+                    <button class="limpar-teclado" id="btnLimpar-Teclado">LIMPAR</button>
+                    <button class="confirmar" id="btnConfirmar">CONFIRMAR</button>
 
-              <footer>
-                Sistema demonstrativo • nenhum dado bancário real
-              </footer>
+                </div>
+
+                <footer>
+                    Sistema demonstrativo • nenhum dado bancário real
+                </footer>
 
             </div>
 
@@ -112,5 +118,7 @@
     </main>
 
 </body>
+
+<script src="script.js"></script>
 
 </html>
