@@ -5,7 +5,7 @@ const elementoMensagem = document.getElementById("mensagem")
 const listaHistorico = document.getElementById("listaHistorico")
 
 // Estado inicial da simulção
-let saldo = 150000 // R$ 1.500,00 armazenado em centavos
+let saldo = 0 // R$ 1.500,00 armazenado em centavos
 let valorDigitado = ""
 let operacao = "saque"
 
@@ -19,7 +19,13 @@ function formatarMoeda(centavos) {
 
 // Atualiza saldo na tela
 function atualizarSaldo() {
-    elementoSaldo.textContent = formatarMoeda(saldo)
+   function atualizarSaldo() {
+    if (saldo === 0) {
+        elementoSaldo.textContent = "";
+    } else {
+        elementoSaldo.textContent = formatarMoeda(saldo);
+    }
+}
 }
 
 // Atualiza valor que aparece no painel de saque
@@ -27,6 +33,8 @@ function atualizarValor() {
     const centavos = Number(valorDigitado || "0")
     elementoValor.textContent = formatarMoeda(centavos)
 }
+
+mostrarMensagem("Faça um depósito para iniciar.");
 
 // Exibe mensagens para o usuário
 function mostrarMensagem(texto) {
@@ -96,35 +104,52 @@ document.getElementById("btnConsultar").addEventListener("click", () => {
 
 // Confirma o saque ou depósito
 document.getElementById("btnConfirmar").addEventListener("click", () => {
-    const valor = Number(valorDigitado)
+    const valor = Number(valorDigitado);
 
     if (!valorDigitado || !Number.isSafeInteger(valor) || valor <= 0) {
-        mostrarMensagem("Digite um valor válido.")
-        return
+        mostrarMensagem("Digite um valor válido.");
+        return;
+    }
+
+    if (operacao === "depósito") {
+        saldo += valor;
+
+        atualizarSaldo();
+
+        registrarHistorico(
+            `Depósito: + ${formatarMoeda(valor)}`
+        );
+
+        mostrarMensagem(
+            `Depósito de ${formatarMoeda(valor)} realizado com sucesso!`
+        );
+
+        limparValor();
+
+        return;
     }
 
     if (operacao === "saque") {
         if (valor > saldo) {
-            mostrarMensagem("Saldo insuficiente para realizar o saque.")
-            return
+            mostrarMensagem("Saldo insuficiente.");
+            return;
         }
 
-        saldo -= valor
+        saldo -= valor;
 
-        registrarHistorico(`Saque: - ${formatarMoeda(valor)}`);
+        atualizarSaldo();
 
-        mostrarMensagem(`Saque de ${formatarMoeda(valor)} realizado com sucesso!`)
-    } else {
-        saldo += valor
+        registrarHistorico(
+            `Saque: - ${formatarMoeda(valor)}`
+        );
 
-        registrarHistorico(`Depósito: + ${formatarMoeda(valor)}`);
+        mostrarMensagem(
+            `Saque de ${formatarMoeda(valor)} realizado com sucesso!`
+        );
 
-        mostrarMensagem(`Depósito de ${formatarMoeda(valor)} realizado com sucesso!`);
+        limparValor();
     }
-
-     atualizarSaldo()
-    limparValor()
-})
+});
 
 // Limpa o teclado
 document.getElementById("btnLimparTeclado").addEventListener("click", () => {
