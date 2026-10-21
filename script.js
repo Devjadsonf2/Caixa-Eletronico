@@ -19,14 +19,13 @@ function formatarMoeda(centavos) {
 
 // Atualiza saldo na tela
 function atualizarSaldo() {
-   function atualizarSaldo() {
     if (saldo === 0) {
         elementoSaldo.textContent = "";
     } else {
         elementoSaldo.textContent = formatarMoeda(saldo);
     }
 }
-}
+
 
 // Atualiza valor que aparece no painel de saque
 function atualizarValor() {
@@ -42,7 +41,7 @@ function mostrarMensagem(texto) {
 }
 
 // Registra as movimentações no hitórico
-function registrarHitorico(descricao) {
+function registrarHistorico(descricao) {
     const item = document.createElement("li")
 
     const agora = new Date().toLocaleString("pt-BR")
@@ -61,7 +60,7 @@ function limparValor() {
 // Digita os números como em um caixa eletrônico
 document.querySelectorAll("[data-numero]").forEach((botao) => {
     botao.addEventListener("click", () => {
-        if(valorDigitado >= 9) {
+        if(valorDigitado.length >= 10) {
             mostrarMensagem("Limite de dígitos atingido.")
             return
         }
@@ -152,7 +151,7 @@ document.getElementById("btnConfirmar").addEventListener("click", () => {
 });
 
 // Limpa o teclado
-document.getElementById("btnLimparTeclado").addEventListener("click", () => {
+document.getElementById("btnLimpar-Teclado").addEventListener("click", () => {
     limparValor()
 
     mostrarMensagem("Valor digitado apagado.")
