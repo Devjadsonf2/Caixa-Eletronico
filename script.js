@@ -41,14 +41,26 @@ function mostrarMensagem(texto) {
 }
 
 // Registra as movimentações no hitórico
+
 function registrarHistorico(descricao) {
-    const item = document.createElement("li")
+    const item = document.createElement("li");
 
-    const agora = new Date().toLocaleString("pt-BR")
+    const agora = new Date().toLocaleString("pt-BR");
 
-    item.textContent = `${agora} - ${descricao}`
+    const data = document.createElement("span");
+    data.textContent = `${agora} - `;
 
-    listaHistorico.prepend(item)
+    const textoDescricao = document.createElement("span");
+    textoDescricao.textContent = descricao;
+
+    if (descricao.toLowerCase().includes("depósito")) {
+        textoDescricao.style.color = "green";
+    } else if (descricao.toLowerCase().includes("saque")) {
+        textoDescricao.style.color = "red";
+    }
+
+    item.append(data, textoDescricao);
+    listaHistorico.prepend(item);
 }
 
 // Limpa somente o valor digitado
@@ -84,6 +96,7 @@ document.querySelectorAll("[data-valor]").forEach((botao) => {
 
 // Seleciona a operação de saque
 document.getElementById("btnSacar").addEventListener("click", () => {
+    btnSacar.classList.add("ativo")
     operacao = "saque"
 
     mostrarMensagem("Digite o valor para sacar.");
@@ -91,6 +104,7 @@ document.getElementById("btnSacar").addEventListener("click", () => {
 
 // Seleciona a operação de depósito
 document.getElementById("btnDepositar").addEventListener("click", () => {
+    btnDepositar.classList.add("ativo")
     operacao = "depósito"
 
     mostrarMensagem("Digite o valor para depositar.")
@@ -98,6 +112,7 @@ document.getElementById("btnDepositar").addEventListener("click", () => {
 
 // Consulta o saldo
 document.getElementById("btnConsultar").addEventListener("click", () => {
+    btnConsultar.classList.add("ativo")
     mostrarMensagem(`Seu saldo disponível é ${formatarMoeda(saldo)}.`)
 })
 
@@ -168,6 +183,7 @@ document.getElementById("btnCancelar").addEventListener("click", () => {
 
 // Limpa a operação atual
 document.getElementById("btnLimpar").addEventListener("click", () => {
+    btnLimpar.classList.add("ativo")
     limparValor()
 
     mostrarMensagem("Operação limpa. Digite um novo valor.")
