@@ -131,6 +131,23 @@ body {
     gap: 10px;
 }
 
+#btnSacar.ativo {
+    background-color: var(--vermelho);
+}
+
+#btnDepositar.ativo {
+    background-color: var(--azul);
+}
+
+#btnLimpar.ativo {
+    background-color: var(--branco);
+    color: var(--bg);
+}
+
+#btnConsultar.ativo {
+    background-color: var(--verde);
+}
+
 /* ====================================================================================================
    Botões
    =================================================================================================== */
